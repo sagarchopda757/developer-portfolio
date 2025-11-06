@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sagar Chopda | Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --hu-background: 0, 0%, 100%;
+        --hu-foreground: 0, 0%, 14%;
+        --hu-card: 0, 0%, 99%;
+        --hu-card-foreground: 0, 0%, 14%;
+        --hu-primary: 235, 100%, 60%;
+        --hu-primary-foreground: 0, 0%, 98%;
+        --hu-secondary: 0, 0%, 97%;
+        --hu-secondary-foreground: 0, 0%, 20%;
+        --hu-muted: 0, 0%, 97%;
+        --hu-muted-foreground: 0, 0%, 56%;
+        --hu-accent: 0, 0%, 96%;
+        --hu-accent-foreground: 0, 0%, 20%;
+        --hu-destructive: 9, 96%, 47%;
+        --hu-destructive-foreground: 0, 0%, 98%;
+        --hu-border: 0, 0%, 92%;
+        --hu-input: 0, 0%, 100%;
+        --hu-ring: 0, 0%, 71%;
+      }
+      .dark {
+        --hu-background: 0, 0%, 7%;
+        --hu-foreground: 0, 0%, 100%;
+        --hu-card: 0, 0%, 9%;
+        --hu-card-foreground: 0, 0%, 100%;
+        --hu-primary: 235, 100%, 60%;
+        --hu-primary-foreground: 0, 0%, 98%;
+        --hu-secondary: 0, 0%, 15%;
+        --hu-secondary-foreground: 0, 0%, 100%;
+        --hu-muted: 0, 0%, 15%;
+        --hu-muted-foreground: 0, 0%, 71%;
+        --hu-accent: 0, 0%, 15%;
+        --hu-accent-foreground: 0, 0%, 100%;
+        --hu-destructive: 0, 84%, 50%;
+        --hu-destructive-foreground: 0, 0%, 98%;
+        --hu-border: 0, 0%, 100%, 10%;
+        --hu-input: 0, 0%, 100%, 5%;
+        --hu-ring: 0, 0%, 56%;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            backgroundImage: {
+              'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+            },
+            colors: {
+              border: "hsl(var(--hu-border))",
+              input: "hsl(var(--hu-input))",
+              ring: "hsl(var(--hu-ring))",
+              background: "hsl(var(--hu-background))",
+              foreground: "hsl(var(--hu-foreground))",
+              primary: {
+                DEFAULT: "hsl(var(--hu-primary))",
+                foreground: "hsl(var(--hu-primary-foreground))",
+              },
+              secondary: {
+                DEFAULT: "hsl(var(--hu-secondary))",
+                foreground: "hsl(var(--hu-secondary-foreground))",
+              },
+              destructive: {
+                DEFAULT: "hsl(var(--hu-destructive))",
+                foreground: "hsl(var(--hu-destructive-foreground))",
+              },
+              muted: {
+                DEFAULT: "hsl(var(--hu-muted))",
+                foreground: "hsl(var(--hu-muted-foreground))",
+              },
+              accent: {
+                DEFAULT: "hsl(var(--hu-accent))",
+                foreground: "hsl(var(--hu-accent-foreground))",
+              },
+              card: {
+                DEFAULT: "hsl(var(--hu-card))",
+                foreground: "hsl(var(--hu-card-foreground))",
+              }
+            },
+            animation: {
+              'gradient-bg': 'gradient-bg 15s ease infinite',
+              'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+              'fade-in': 'fade-in 0.3s ease-out forwards',
+              'zoom-in-sm': 'zoom-in-sm 0.3s ease-out forwards',
+            },
+            keyframes: {
+              'gradient-bg': {
+                '0%, 100%': { 'background-position': '0% 50%' },
+                '50%': { 'background-position': '100% 50%' },
+              },
+              'fade-in-up': {
+                  '0%': { opacity: '0', transform: 'translateY(20px)' },
+                  '100%': { opacity: '1', transform: 'translateY(0)' }
+              },
+              'fade-in': { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+              'zoom-in-sm': {
+                  '0%': { opacity: '0', transform: 'scale(0.95)' },
+                  '100%': { opacity: '1', transform: 'scale(1)' }
+              }
+            },
+          },
+        },
+      }
+    </script>
+
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "next-themes": "https://aistudiocdn.com/next-themes@^0.4.6",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^11.3.11",
+    "@tsparticles/react": "https://aistudiocdn.com/tsparticles-react@^3.0.0",
+    "@tsparticles/slim": "https://aistudiocdn.com/tsparticles-slim@^3.5.0",
+    "@tsparticles/engine": "https://aistudiocdn.com/tsparticles-engine@^3.5.0",
+    "three": "https://aistudiocdn.com/three@^0.167.0",
+    "react-icon-cloud": "https://aistudiocdn.com/react-icon-cloud@^4.1.3",
+    "simple-icons": "https://aistudiocdn.com/simple-icons@^11.0.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.417.0",
+    "class-variance-authority": "https://aistudiocdn.com/class-variance-authority@^0.7.0",
+    "@radix-ui/react-scroll-area": "https://aistudiocdn.com/@radix-ui/react-scroll-area@^1.1.0",
+    "@google/generative-ai": "https://aistudiocdn.com/@google/generative-ai@^0.15.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-CZ1GkB0x.js"></script>
+</head>
+  <body class="antialiased font-sans">
+    <div id="root"></div>
+  </body>
+</html>
