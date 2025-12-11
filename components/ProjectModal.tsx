@@ -1,7 +1,46 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import type { Project } from '../types';
 import { CloseIcon, GithubIcon, ExternalLinkIcon } from './icons/Icons';
+
+// Map project titles to local image fallbacks
+const projectImageFallbacks: Record<string, string> = {
+  'Sync To Sheet': '/Images/sync_to_sheet.png',
+  'Skillioz Platform': '/Images/skillioz_logo.png',
+};
+
+// Image component with error handling and fallback
+const ProjectImage: React.FC<{ src: string; alt: string; className?: string; projectTitle?: string }> = ({ src, alt, className, projectTitle }) => {
+  const [imgSrc, setImgSrc] = useState(src);
+  const [errorCount, setErrorCount] = useState(0);
+
+  const handleError = () => {
+    if (errorCount === 0) {
+      // First error: try local fallback if available
+      setErrorCount(1);
+      if (projectTitle && projectImageFallbacks[projectTitle]) {
+        setImgSrc(projectImageFallbacks[projectTitle]);
+      } else {
+        // Second error: use placeholder
+        setImgSrc('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"%3E%3Crect width="48" height="48" fill="%23e5e7eb"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="20" fill="%239ca3af"%3E%3F%3C/text%3E%3C/svg%3E');
+      }
+    } else if (errorCount === 1) {
+      // Second error: use placeholder
+      setErrorCount(2);
+      setImgSrc('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"%3E%3Crect width="48" height="48" fill="%23e5e7eb"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="20" fill="%239ca3af"%3E%3F%3C/text%3E%3C/svg%3E');
+    }
+  };
+
+  return (
+    <img 
+      src={imgSrc} 
+      alt={alt} 
+      className={className}
+      onError={handleError}
+      loading="lazy"
+    />
+  );
+};
 
 interface ProjectModalProps {
   project: Project;
@@ -38,7 +77,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
       >
         <div className="flex items-center justify-between p-6 border-b border-border">
             <div className="flex items-center">
-                <img src={project.image} alt={project.title} className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-border" />
+                <ProjectImage src={project.image} alt={project.title} className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-border" projectTitle={project.title} />
                 <h2 id="project-title" className="text-2xl font-bold text-card-foreground">{project.title}</h2>
             </div>
             <button 

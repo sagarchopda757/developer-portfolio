@@ -6,7 +6,7 @@ const About: React.FC = () => {
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/80 backdrop-blur-sm">
       <div className="container mx-auto max-w-3xl text-center">
         <img 
-          src="https://media.licdn.com/dms/image/v2/D4D03AQFRqbzYDSKoMw/profile-displayphoto-shrink_200_200/B4DZT431NvHkAY-/0/1739342173699?e=1764201600&v=beta&t=gCPM3q-3LQCraxukBNiC4Sh9kZAnBFmD1DZrsWwwNyU" 
+          src="https://avatars.githubusercontent.com/u/135312503?s=400&u=80be9d53980d2188bb4c45d608c8389b78eb0f2e&v=4" 
           alt="Sagar Chopda" 
           className="rounded-full shadow-lg mx-auto w-48 h-48 object-cover border-4 border-border mb-8"
         />
